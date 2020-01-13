@@ -19,11 +19,12 @@ public class SchoolRepository {
 	private final static String DB_USER = "h4rryp0tt3r";
 	private final static String DB_PASSWORD = "Horcrux4life!";
 	
-	public Connection connection = null;
-	public PreparedStatement statement = null;
-	public ResultSet resultSet = null;
 
 	public List<School> findAll() {
+		Connection connection = null;
+		PreparedStatement statement = null;
+		ResultSet resultSet = null;
+
 		try {
 			connection = DriverManager.getConnection(DB_URL, DB_USER, DB_PASSWORD);
 			statement = connection.prepareStatement("SELECT * FROM school;");
@@ -51,6 +52,9 @@ public class SchoolRepository {
 	}
 
 	public School findById(Long id) {
+		Connection connection = null;
+		PreparedStatement statement = null;
+		ResultSet resultSet = null;
 
 		try {
 			connection = DriverManager.getConnection(DB_URL, DB_USER, DB_PASSWORD);
@@ -76,6 +80,9 @@ public class SchoolRepository {
 	}
 
 	public List<School> findByCountry(String country) {
+		Connection connection = null;
+		PreparedStatement statement = null;
+		ResultSet resultSet = null;
 
 		try {
 			connection = DriverManager.getConnection(DB_URL, DB_USER, DB_PASSWORD);
